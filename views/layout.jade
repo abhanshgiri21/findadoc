@@ -1,0 +1,53 @@
+doctype strict
+html(xmlns='http://www.w3.org/1999/xhtml')
+head
+	title= title
+	meta(http-equiv='Content-Language', content='English')
+	meta(http-equiv='Content-Type', content='text/html', charset='UTF-8')
+	link(rel='stylesheet', type='text/css', href='/stylesheets/style.css', media='screen')
+	script(src="/javascripts/jquery.js")
+	script(src="/javascripts/main.js")
+body
+	#content
+		#header
+			#title
+				h1 Find a Doctor
+				h2 Search for local doctors
+			img(src='images/bg/header_left.jpg', style='margin-left: 10%;')
+		#mainMenu
+			ul.floatLeft
+				li
+					a(href='/'  class= (title == 'home'?"here":"")) home
+				li
+					a(href='/doctors' class= (title == 'doctors'?"here":"")) Browse Doctor
+				li
+					a(href='/doctors/add' class= (title == 'adddoc'?"here":"")) Add Doctor
+				li
+					a(href='/categories/add' class=(title == 'addcat'?"here":"")) Add Category
+		#page
+			.width25.floatRight.leftColumn
+				include ./includes/categories.jade	
+			.width75.floatLeft
+				.gradient
+					!=messages()
+					block content
+					
+#footer
+	#width
+		span.floatLeft  Copyright © 2006 
+		span.floatRight
+			a(href='') home
+			span.grey |
+			a(href='') about us
+			span.grey |
+			a(href='') news
+			span.grey |
+			a(href='') contact
+			span.grey |
+			a(href='') links
+// Designed by DreamTemplate. Please leave link unmodified.
+br
+center
+	a(href='http://www.dreamtemplate.com', title='Website Templates', target='_blank') Website templates
+
+	
